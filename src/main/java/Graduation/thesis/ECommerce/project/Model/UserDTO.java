@@ -3,7 +3,7 @@ package Graduation.thesis.ECommerce.project.Model;
 public class UserDTO {
     private Long id;
     private String name;
-    private String age;
+    private String DOB;
     private String role;
     private Boolean enabled;
     private String username;
@@ -33,12 +33,12 @@ public class UserDTO {
         this.name = name;
     }
 
-    public String getAge() {
-        return age;
+    public String getDOB() {
+        return DOB;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setDOB(String DOB) {
+        this.DOB = DOB;
     }
 
     public String getRole() {

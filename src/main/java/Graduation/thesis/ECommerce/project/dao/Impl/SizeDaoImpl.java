@@ -5,7 +5,7 @@ import Graduation.thesis.ECommerce.project.dao.SizeDao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.springframework.security.core.parameters.P;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -1,5 +1,7 @@
 package Graduation.thesis.ECommerce.project.Model;
 
+import javax.xml.crypto.Data;
+
 public class CommentDTO {
     private Long id;
     private String commentDate;

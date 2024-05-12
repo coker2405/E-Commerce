@@ -14,6 +14,7 @@ public class CommentDaoImpl implements CommentDao {
     @PersistenceContext
     EntityManager entityManager;
 
+
     @Override
     public void insert(Comment comment) {
         entityManager.persist(comment);
@@ -25,8 +26,8 @@ public class CommentDaoImpl implements CommentDao {
     }
 
     @Override
-    public void delete(Long id) {
-        entityManager.remove(get(id));
+    public void delete(Comment comment) {
+        entityManager.remove(comment);
     }
 
     @Override

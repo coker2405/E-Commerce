@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -63,10 +64,10 @@ public class BillServiceImpl implements BillService {
     @Override
     public BillDTO get(Long id) {
 
-        return convert(billDao.get(id));
+        return convertDTO(billDao.get(id));
     }
 
-    private BillDTO convert(Bill bill) {
+    private BillDTO convertDTO(Bill bill) {
 
         BillDTO billDTO = new BillDTO();
         billDTO.setId(bill.getId());
@@ -87,11 +88,26 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public List<BillDTO> search(String findName, int start, int length) {
-        return null;
+        List<Bill> bills = billDao.search(findName, start, length);
+        List<BillDTO> billDTOs = new ArrayList<BillDTO>();
+        for (Bill bill : bills) {
+            billDTOs.add(convertDTO(bill));
+        }
+        return billDTOs;
+
     }
 
     @Override
     public List<BillDTO> searchByBuyerId(Long buyerId, int start, int length) {
-        return null;
+        List<Bill> bills = billDao.searchByBuyerId(buyerId, start, length);
+        List<BillDTO> billDTOs = new ArrayList<BillDTO>();
+        if (bills.isEmpty()) {
+            return null;
+        } else {
+            for (Bill bill : bills) {
+                billDTOs.add(convertDTO(bill));
+            }
+            return billDTOs;
+        }
     }
 }

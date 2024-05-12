@@ -13,6 +13,8 @@ public interface UserDao {
 
     User getByUserName(String userName);
 
+    User getByEmail(String email);
+
     List<User> search(String findName, int start, int length);
 
 }

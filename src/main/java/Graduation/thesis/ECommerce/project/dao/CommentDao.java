@@ -10,7 +10,7 @@ public interface CommentDao {
 
     void update(Comment comment);
 
-    void delete(Long id);
+    void delete(Comment comment);
 
     Comment get(Long id);
 

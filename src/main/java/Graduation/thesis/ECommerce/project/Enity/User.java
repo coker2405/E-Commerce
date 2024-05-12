@@ -1,6 +1,7 @@
 package Graduation.thesis.ECommerce.project.Enity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import jakarta.persistence.*;
 
@@ -19,8 +20,8 @@ public class User implements Serializable {
     @Column(name = "enabled")
     private Boolean enabled;
 
-    @Column(name = "age")
-    private String age;
+    @Column(name = "DOB")
+    private Date DOB;
 
     @Column(name = "username", unique = true)
     private String username;
@@ -40,7 +41,7 @@ public class User implements Serializable {
     @Column(name = "phone")
     private String phone;
 
-    @Column(name = "email")
+    @Column(name = "email",unique = true)
     private String email;
 
     public User(Long id) {
@@ -76,12 +77,12 @@ public class User implements Serializable {
         this.enabled = enabled;
     }
 
-    public String getAge() {
-        return age;
+    public Date getDOB() {
+        return DOB;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setDOB(Date DOB) {
+        this.DOB = DOB;
     }
 
     public String getUsername() {
